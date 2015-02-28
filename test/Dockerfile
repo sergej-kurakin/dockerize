@@ -6,5 +6,5 @@ RUN  apt-get update && apt-get install -y --no-install-recommends \
  php5-redis \
  php5-mysql \
  redis-tools \
- mysql-client-5.6
+ mysql-client-5.5
 CMD  ["/true"]
