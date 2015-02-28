@@ -1,11 +1,7 @@
 <?php
 
-
-$redisAddr = getenv('REDIS_PORT_6379_TCP_ADDR');
-$redisPort = getenv('REDIS_PORT_6379_TCP_PORT');
-
 $redis = new Redis();
-$redis->connect($redisAddr, $redisPort);
+$redis->connect('redis');
 
 try {
  $viewCount = (int)$redis->get('viewcoint');

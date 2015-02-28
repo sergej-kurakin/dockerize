@@ -18,7 +18,7 @@
 ##
 
 upstream phps {
-  server %%%PHP5_FPM%%%;
+  server php5:9000;
 }
 
 server {
