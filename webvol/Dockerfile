@@ -3,4 +3,5 @@ ADD     index.html /var/www/
 ADD     phpinfo.php /var/www/
 ADD     index.php /var/www/
 ADD     redis.php /var/www/
+ADD     mysql.php /var/www/
 VOLUME  ["/var/www"]
