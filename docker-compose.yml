@@ -9,6 +9,8 @@ nginx:
 
 php5:
   build: ./php5/
+  environment:
+    MYSQL_ROOT_PASSWORD: mysecretpassword
   volumes_from:
     - webvol
   links:
