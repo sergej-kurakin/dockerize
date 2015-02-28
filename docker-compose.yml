@@ -1,5 +1,5 @@
 nginx:
-  image: zaza/nginx
+  build: ./nginx/
   volumes_from:
     - webvol
   ports:
@@ -8,7 +8,7 @@ nginx:
     - php5:php5
 
 php5:
-  image: zaza/php5
+  build: ./php5/
   volumes_from:
     - webvol
   links:
@@ -16,22 +16,22 @@ php5:
     - mysql:mysql
 
 redis:
-  image: zaza/redis
+  build: ./redis/
   volumes_from:
     - redisvol
 
 mysql:
-  image: zaza/mysql
+  build: ./mysql/
   environment:
     MYSQL_ROOT_PASSWORD: mysecretpassword
   volumes_from:
     - mysqlvol
 
 redisvol:
-  image: zaza/redisvol
+  build: ./redisvol/
 
 mysqlvol:
-  image: zaza/mysqlvol
+  build: ./mysqlvol/
 
 webvol:
-  image: zaza/webvol
+  build: ./webvol/
