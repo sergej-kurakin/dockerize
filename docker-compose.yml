@@ -1,0 +1,37 @@
+nginx:
+  image: zaza/nginx
+  volumes_from:
+    - webvol
+  ports:
+    - "80:80"
+  links:
+    - php5:php5
+
+php5:
+  image: zaza/php5
+  volumes_from:
+    - webvol
+  links:
+    - redis:redis
+    - mysql:mysql
+
+redis:
+  image: zaza/redis
+  volumes_from:
+    - redisvol
+
+mysql:
+  image: zaza/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: mysecretpassword
+  volumes_from:
+    - mysqlvol
+
+redisvol:
+  image: zaza/redisvol
+
+mysqlvol:
+  image: zaza/mysqlvol
+
+webvol:
+  image: zaza/webvol
